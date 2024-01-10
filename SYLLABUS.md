@@ -4,6 +4,9 @@ tags: ggg, ggg2024, ggg298
 
 # Syllabus for Tools for Data Intensive Research, GGG 298, WQ 2023-2024
 
+[![hackmd-github-sync-badge](https://hackmd.io/TFAT4xgcTl641rhsCCnsfA/badge)](https://hackmd.io/TFAT4xgcTl641rhsCCnsfA)
+
+
 [toc]
 
 
