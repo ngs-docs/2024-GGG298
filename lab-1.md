@@ -7,7 +7,7 @@ tags: ggg, ggg2024, ggg298
 
 [toc] 
 
-# GGG 298 WQ 2024 - Lab, Day 1 - Running RStudio and FastQC
+# GGG 298 WQ 2024 - Lab 1, Day 1 - Running RStudio and FastQC
 
 Lab for Wed, Jan 10th, 2023.
 
@@ -37,7 +37,7 @@ The first thing we will need to do is connect to farm via ssh.
 
 The main piece of _information_ you need is in the e-mail with the subject "farm username and password for GGG 298". You should have received this e-mail on today, Jan 10th. If you aren't officially signed up for the course, please drop me a note at ctbrown@ucdavis.edu right now, and I'll give you one!
 
-Once you have this information, please follow either of the 
+Once you have this information, please follow the relevant instructions below:
 
 [Instructions for Mac OS, Linux, and WSL](https://ngs-docs.github.io/2021-august-remote-computing/connecting-to-remote-computers-with-ssh.html#mac-os-x-using-the-terminal-program)
 
@@ -237,6 +237,10 @@ In your RStudio file browser window, click on the `ERR458493_fastqc.html` file, 
 Depending on time, I'll dig into this today or (more likely) next week.
 
 The important thing, though, is that you (a) ran an analysis and (b) looked at the results! Hurray!
+
+## Let's answer a question!
+
+[Where is RStudio "doing" its compute?](https://docs.google.com/forms/d/e/1FAIpQLSe1qDwcXTGVQtHPo3EdQ1NK47b3B1oJLIxLCjFY2TdlGZIJUQ/viewform)
 
 ## Close things out
 
