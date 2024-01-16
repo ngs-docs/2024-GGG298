@@ -2,11 +2,16 @@
 tags: ggg, ggg2024, ggg298
 ---
 
+[![hackmd-github-sync-badge](https://hackmd.io/KuZZCPzJQZCjytSnVSnJew/badge)](https://hackmd.io/KuZZCPzJQZCjytSnVSnJew)
+
+
 [toc] 
 
 # GGG 298 WQ 2024 - Lab, Day 1 - Running RStudio and FastQC
 
 Lab for Wed, Jan 10th, 2023.
+
+[Syllabus link](https://hackmd.io/TFAT4xgcTl641rhsCCnsfA?view)
 
 OK, today we're going to get started with something absolutely necessary for most data-intensive work: logging into a remote computer!
 
@@ -28,10 +33,22 @@ We'll be building on these approaches throughout the course, and digging deeper 
 
 ## Log into farm via ssh
 
-* retrieve the username (datalab-XX) and password that you received in e-mail; you'll need them in order to log in
-* use ssh (Mac OS X, Windows Subsystem for Linux, or Linux) or MobaXTerm to connect
-* where you should be at the end of this section: at a prompt that says `datalab-XX@farm:~$`
-* log out and log back in a few times. You can log out by typing `exit`.
+The first thing we will need to do is connect to farm via ssh.
+
+The main piece of _information_ you need is in the e-mail with the subject "farm username and password for GGG 298". You should have received this e-mail on today, Jan 10th. If you aren't officially signed up for the course, please drop me a note at ctbrown@ucdavis.edu right now, and I'll give you one!
+
+Once you have this information, please follow either of the 
+
+[Instructions for Mac OS, Linux, and WSL](https://ngs-docs.github.io/2021-august-remote-computing/connecting-to-remote-computers-with-ssh.html#mac-os-x-using-the-terminal-program)
+
+[Instructions for Windows and MobaXterm](https://ngs-docs.github.io/2021-august-remote-computing/connecting-to-remote-computers-with-ssh.html#windows-connecting-to-remote-computers-with-mobaxterm)
+
+Once you log in succesfully...
+
+You should be at a prompt that says `datalab-XX@farm:~$ `.
+
+Things to try:`
+* log out and log back in a few times to make sure you've got it! You can log out by typing `exit`.
 * log in simultaneously a few times by using a new window or windows. That's totally ok!
 
 ## Request compute resources with `srun`
@@ -78,8 +95,7 @@ The first command sets up your account to use the RStudio Server software.
 
 The second command sets up your account to use a specific version of R.
 
-The third command _runs_ RStudio Server at the 
-
+The third command _runs_ RStudio Server on farm.
 
 You should see output that looks like this;
 
@@ -226,7 +242,7 @@ The important thing, though, is that you (a) ran an analysis and (b) looked at t
 
 Let's close things out for the day!
 
-First, close your RStudio window/tab in your Web browser. (As you'll see next week, all the files and things are still there. You're just closing down your Web browser connecton to RStudio.
+First, close your RStudio window/tab in your Web browser. (As you'll see next week, all the files and things are still there. You're just closing down your Web browser connection to RStudio.
 
 Second, go to the window running the `ssh -L...` command. Exit, either by typing `exit` or just closing the window. This closes down your ssh tunnel connection.
 
@@ -246,6 +262,13 @@ We'll actually spend quite a few weeks digging into various aspects of this, and
 
 Next week we'll do all of this again, and go into a bit more detail about the different parts of what's going on - files, remote computers, srun, conda, and FastQC.
 
-## More resources
+## More resources!
 
 You might be interested in workshops 1 through 5 of [Intro to Remote Computing](https://ngs-docs.github.io/2021-august-remote-computing/). Warning, this was written mostly by Titus ;). There are video recordings available.
+
+You might also be interested in the Grad Pathways Microcredentialing in Research Computing - [(link)](https://gradpathways.ucdavis.edu/research-computing-pathway). Hit me up by e-mail if you're interested!
+
+DataLab runs a bunch of [workshops](https://datalab.ucdavis.edu/workshops/) that you might be interested in, as does the [Genome Center Bioinformatics Core](https://bioinformatics.ucdavis.edu/training). The DataLab workshops are free, the GC ones are not. This course will prepare you well, and/or complement, these workshops!
+
+The book [Bioinformatics Data Skills](https://vincebuffalo.com/book/) is an excellent reference that is worth buying if you are looking to invest ;).
+

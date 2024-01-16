@@ -4,6 +4,9 @@ tags: ggg, ggg2024, ggg298
 
 # Syllabus for Tools for Data Intensive Research, GGG 298, WQ 2023-2024
 
+[![hackmd-github-sync-badge](https://hackmd.io/TFAT4xgcTl641rhsCCnsfA/badge)](https://hackmd.io/TFAT4xgcTl641rhsCCnsfA)
+
+
 [toc]
 
 
@@ -79,18 +82,20 @@ Wednesdays, 12:30-3pm.
 
 These will be lab practicals where we take a solid look at a given piece of technology and work through using it together.
 
+All materials will be available indefinitely at both their original hackmd links, and also at https://github.com/ngs-docs/2024-GGG298.
+
 ### Lab topics
 
-1/10 - Intro and logging in to farm; RStudio; FastQC
-1/17 - farm, remote computers, shell, FastQC
-1/24 - conda for software installation
-1/31 - Project Day 1: sourmash 1 (**in person better**)
-2/7 - snakemake
-2/14 - git
-2/21 - project organization
-2/28 - quarto for visualization and data analysis
-3/6 - Project Day 2: sourmash 2 (**in person better**)
-3/13 - slurm for computing
+1. 1/10 - Intro and logging in to farm; RStudio; FastQC
+1. 1/17 - farm, remote computers, shell, FastQC
+1. 1/24 - conda for software installation
+1. 1/31 - Project Day 1: sourmash 1 (**in person better**)
+1. 2/7 - snakemake
+1. 2/14 - git
+1. 2/21 - project organization
+1. 2/28 - quarto for visualization and data analysis
+1. 3/6 - Project Day 2: sourmash 2 (**in person better**)
+1. 3/13 - slurm for computing
 
 ## Paper discussions
 
