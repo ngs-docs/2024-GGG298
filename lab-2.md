@@ -94,7 +94,7 @@ I wrote this command based on two things:
 Try running:
 ```
 module load mamba
-mamba load fqc
+mamba activate fqc
 fastqc -h
 ```
 
