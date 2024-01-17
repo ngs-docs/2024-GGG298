@@ -7,7 +7,7 @@ tags: ggg, ggg2024, ggg298, chatgpt
 
 [toc]
 
-# Lab 2, Day 2 - GGG 298 WQ 2024
+# Lab 2, Day 2 - Files, directories, and running programs - GGG 298 WQ 2024
 
 Today we're going to talk through running programs via the UNIX shell, and discuss directories and organization, current working directories, and relative and absolute paths. The goal is to make sure you're comfortable with (or at least exposed to) ways to organize files for UNIX-y approaches to computing.
 
@@ -350,7 +350,7 @@ Notes:
 
 ## Some questions to answer (if time)
 
-
+[Q&A!](https://docs.google.com/forms/d/e/1FAIpQLSdbCxaVqENpb3yG-n6QIErGqDoFLMPnsSeQfZH-xKuWGK5l1g/viewform)
 
 ## A brief exploration of a common Big Data workflow with Jupyter Notebook (if time)
 
