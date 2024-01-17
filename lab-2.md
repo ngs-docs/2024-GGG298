@@ -363,6 +363,16 @@ As an antidote to all this RStudio stuff, I want to show you how I work on a reg
 
 ## End matter
 
+This week we covered:
+* scripts, files, and directories
+* current working directory
+* relative paths, absolute paths
+* directory organization
+
+Circling back around: you, too, could write something like FastQC. It's not that hard to get started - you just write some analysis scripts that do something interesting! And then you have to package them for other people to use, which is ...a whole 'nother topic :sob:. Talk to me if interested...
+
+---
+
 Next week we'll do more of a deep dive into conda and mamba, my preferred approach to installing software on computers (including, but not limited to, the HPC). We'll cover:
 
 * what installing software entails
