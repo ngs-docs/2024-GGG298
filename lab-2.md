@@ -332,13 +332,13 @@ We could actually run this a bunch of different ways.
 Running it from home directory:
 ```
 cd ~/
-Rscript lab-2/calculate_mean.R lab-2/inputs/inp.txt lab-2/outputs/outp.txt
+Rscript lab-2/calculate_mean.R lab-2/data/inp.txt lab-2/outputs/outp.txt
 ```
 
 Running it from the outputs directory:
 ```
 cd lab-2/outputs
-Rscript ../calculate_mean.R ../inputs.txt outp.txt
+Rscript ../calculate_mean.R ../data/inp.txt outp.txt
 ```
 and so on.
 
