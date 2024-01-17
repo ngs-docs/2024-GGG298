@@ -2,6 +2,9 @@
 tags: ggg, ggg2024, ggg298, chatgpt
 ---
 
+[![hackmd-github-sync-badge](https://hackmd.io/exTL3WXTRPC8-S3eLyOk6g/badge)](https://hackmd.io/exTL3WXTRPC8-S3eLyOk6g)
+
+
 [toc]
 
 # Lab 2, Day 2 - GGG 298 WQ 2024
@@ -306,14 +309,57 @@ mv inp.txt data/
 rm *.txt
 ```
 
-TODO:
-* relative vs absolute paths again
-* ../ etc
-* as you'll see organizing things this way makes it easier to use version control and also shell scripting and snakemake
+And now let's run things again:
+```
+Rscript calculate_mean.R data/inp.txt outputs/outp.txt
+```
+and that's a pretty typical approach.
+
+Notes:
+* if you want to "refresh" your outputs (make sure they are generated from the latest script and inputs) you can just `rm outputs/*` and rerun all your code. We'll show you ways of automating this!
+* The "separation of concerns" here is good:
+    * script is in cwd (we can also put it in `scripts/`)
+    * input data, "do not modify", is in `inputs/` where w can keep track of it
+    * outputs are in `outputs/` where we can track it and delete it and ...
+* This will make more sense when we get to git and snakemake, but honestly it's also just ...easier than having everything in one directory!
+
+### Relative vs absolute paths
+
+`data/inp.txt` and `outputs/outp.txt` are just relative paths.
+
+We could actually run this a bunch of different ways.
+
+Running it from home directory:
+```
+cd ~/
+Rscript lab-2/calculate_mean.R lab-2/inputs/inp.txt lab-2/outputs/outp.txt
+```
+
+Running it from the outputs directory:
+```
+cd lab-2/outputs
+Rscript ../calculate_mean.R ../inputs.txt outp.txt
+```
+and so on.
+
+Notes:
+* `Rscript` is in the shell path, which means that it's a program that the shell can find automatically when you give it the name. `type Rscript` and `which Rscript` can give you its actual location, but (generally) this is managed by module and/or mamba and is not useful except for debugging. More on this next week!
+* input and output files are always relative or absolute paths!
+* Relative paths don't start with `/`. Absolute paths do.
+* `../` means next up. `./` means current directory and underneath. Directories may or may not end in `/`.
+
+## Some questions to answer (if time)
+
+
 
 ## A brief exploration of a common Big Data workflow with Jupyter Notebook (if time)
 
 As an antidote to all this RStudio stuff, I want to show you how I work on a regular basis with Python, and how some of what I taught you today (and will teach you in the future ;) fits together. For inspiration! Or at least to get you thinking.
+
+* making a big CSV file
+* bringing it to an interactive viz app (Jupyter Notebook, in this case; running on my computer)
+* running stuff there & visualizing
+    * where is stuff installed? oh right in my conda environment :grin: 
 
 ## End matter
 
