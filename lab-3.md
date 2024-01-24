@@ -2,6 +2,9 @@
 tags: ggg, ggg2024, ggg298
 ---
 
+[![hackmd-github-sync-badge](https://hackmd.io/BffW5KHxTCKPyhUAo2tqHg/badge)](https://hackmd.io/BffW5KHxTCKPyhUAo2tqHg)
+
+
 [toc]
 
 # Installing software on remote computers with conda/mamba - Week 3, GGG 298 Winter 2024
