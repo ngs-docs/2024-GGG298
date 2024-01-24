@@ -593,17 +593,17 @@ file](https://github.com/ngs-docs/2020-ggg-201b-rnaseq/blob/latest/binder/enviro
 for RNAseq, for example. It installs both tidyverse packages and
 bioconductor packages!
 
-Let's install R with RMarkdown support.
+Let's install R with dplyr support.
 
 First, let's figure out what the right package name is. We _could_ go to
 [the conda-forge page](https://conda-forge.org/feedstock-outputs/) and search
 for rmarkdown, but it turns out that google is often your best bet :).
 
-Google 'install rmarkdown with conda' and you'll see that the first hit is
-`r-rmarkdown`. Let's try it!
+Google 'install dplyr with conda' and you'll see that the first hit is
+`r-dplyr`. Let's try it!
 
 ```
-mamba create -n rmd -y r-rmarkdown
+mamba create -y -n dplyr r-dplyr
 ```
 
 This will go ahead and install R itself, as well as all of the packages needed
@@ -611,7 +611,7 @@ to compile RMarkdown documents (like this Web site, in fact).
 
 Activate the environment:
 ```
-conda activate rmd
+conda activate r-dplyr
 ```
 
 Now, try running:
@@ -619,23 +619,21 @@ Now, try running:
 type R
 ```
 to see where R is installed - under your own account. Yay!
-If you want, you can run `R` and then `library(rmarkdown)` to verify that
-it's installed.
+If you want, you can run `R` and then `library(dplyr)` to verify that
+it's installed. (Type 'exit' to get out of R!)
 
-You can also install your own R packages from within R using `install.packages` - and, as long as you're running R from within your conda environment, it will install into that version of R.
+Here's what's going on:
+
+![nested dplyr installation](https://raw.githubusercontent.com/ngs-docs/2024-GGG298/main/lab-3/R-dplyr-nested.png)
+
+You can also install your own R packages from within R using `install.packages` - and, as long as you're running R from within your conda environment, it will install into that environment.
 
 You can manage R packages either way - with conda, or "manually" using R's internal mechanisms. It's often faster to use conda, especially if there are C extension packages, and  I've found that the majority of R packages I use in bioinformatics are readily
 available via conda-forge, which is nice. Again, your mileage may vary... regardless, at least now you have options!
 
-::::warning
-**CHALLENGE:** What would be the command to install the dplyr library for
-R in either the existing rmd environment, or in a new environment? (You can run it if you like, but it might take a few minutes.)
-::::spoiler
-Try:
-```
-mamba install -n dplyr -y r-dplyr
-```
-::::
+### Running RStudio Server using the R from inside a Mamba environment
+
+You know how you enter `module load R` before `module load rstudio-server`? You can replace `module load R` with `mamba activate dplyr`, and then execute `rstudio-launch`, and then you will be using the R installed in the monda environment!
 
 ### Conda and Python
 
