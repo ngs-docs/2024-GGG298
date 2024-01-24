@@ -65,34 +65,12 @@ Also, lot of software installation currently requires (or at least is much easie
 
 Conda tries to solve all of these problems, and (in our experience) largely succeeds. That's what we'll explore today.
 
-:::info
-Conda is a solution that seems to work pretty well, and can be used by any user. Downsides are that it can get big to have everyone install their own software system, but it's not that big... (The farm HPC admins like it, too!)
-:::
-
 ![Caption: conda environments and packages](https://github.com/ngs-docs/2023-GGG298/blob/main/lab-4-conda/conda-cartoon.png?raw=true)
 
 Note that conda emerged from the Python world but is much broader and works for many more software types, including R!
 
 ## Getting started with conda and mamba
 
-### Installing conda and mamba
-
-We installed conda/mamba in your account already for you. 
-
-:::warning
-In case you want to
-install it on another computer, or in another account, [follow these instructions](https://github.com/conda-forge/miniforge#install) to install mambaforge.
-:::
-
-:::info
-### conda vs mamba
-
-mamba is a reimplementation of conda that is faster.
-
-You can use either `conda` or `mamba` to manage environments. They are, with almost no expections, identical in _behavior_.
-
-Below, we'll be using the `mamba` command because it's always faster than conda.
-:::
 
 ### Log into farm
 
@@ -104,27 +82,43 @@ We suggest [using RStudio](https://hackmd.io/4Tm5i97QT5iDlZL-IC7U8A/view#Logging
 If using RStudio, remember to use the Terminal tab!
 :::
 
-When you log in, your prompt should look something like this:
+### Loading conda/mamba
 
-> ~~~
-> (base) datalab-09@farm:~$
-> ~~~
-
-If it doesn't, please let us know and we will help you out!
+conda/mamba is already available on the farm HPC via the modules system: type
+```
+module load mamba
+```
+and your prompt should change to look something like:
+>(base) datalab-05@farm:~$ 
 
 The 'base' part of the prompt indicates that conda has
 been activated in your account and that you are in the default (base)
 environment. Read on!
+
+:::warning
+In case you want to
+install it on another computer [follow these instructions](https://github.com/conda-forge/miniforge) to install mamba!.
+:::
+
+:::info
+### conda vs mamba
+
+mamba is a reimplementation of conda that is faster.
+
+You can use either `conda` or `mamba` to manage environments. They are, with almost no exceptions, identical in _behavior_.
+
+Below, we'll be using the `mamba` command because it's always faster than conda.
+:::
 
 ### Creating your first environment & installing csvtk!
 
 #### What is a conda environment?
 
 A conda environment is a specific collection of packages/tools that
-you have installed. For example, you may have one environment with
-Python 2.7 and its dependencies, and another environment with Python
-3.4, both for legacy testing. And then you might have a Python 3.9
-environment for the latest version of Python. Environments are
+you have installed. For example, you might have a Python 3.11
+environment for the latest version of Python, and Python 3.9 environment for an older version that works with certain packages.
+
+Environments are
 isolated from each other: if you change one environment, your other
 environments are not affected. You can easily `activate` new
 environments, which is how you switch between them.
@@ -277,26 +271,33 @@ science, conda has come closest to being the thing that works for
 everyone, on every platform. As they say, "your mileage may vary"
 (YMMV). But we like conda :).
 
+More specifically,
+* conda doesn't require sysadmin privileges to install stuff!
+* it is not platform specific - it works on Mac OS, Linux, and Windows.
+* it is open source.
+* It is supported by a big community.
+* Most command-line software is available via it, and that software is often up to date.
+
 ## Installing more software in your current environment
 
 Once you're in an environment, you can install new software **into that environment** with `conda install -y <software_name>` like so:
 
 ```
+mamba activate base
 mamba install -y fastqc
 ```
 and that should work too! You'll be able to run the `fastqc` command now.
 
-Here, FastQC is a completely separate application that we use in
-bioinformatics for looking at FASTQ files. The main point is that it's just
-some more "non-standard" software that you can install!
+What you're doing here is _installing software_ into an _existing_ environment with `mamba install`, instead of _creating_ a _new_ environment with `mamba create`.
 
 :::success
 Let's try it out quickly -
 ```
-cd ~/
+mkdir ~/298-lab3
+cd ~/298-lab3
 fastqc ~ctbrown/data/ggg201b/SRR2584403_1.fastq.gz -o ./
 ```
-This will create two files, `SRR2584403_1_fastqc.html` and `SRR2584403_1_fastqc.zip`, in your home directory. You can look at them in the RStudio browser window OR you can look at an example copy [here](https://farm.cse.ucdavis.edu/~ctbrown/SRR2584403_1_fastqc.html).
+As per our previous execution of fastqc, this will create two files, `SRR2584403_1_fastqc.html` and `SRR2584403_1_fastqc.zip`, in your `298-lab3/` directory.
 :::
 
 Generally you want to avoid installing too many packages in one
@@ -315,7 +316,33 @@ we've actually installed... this is because packages like FastQC have many depen
 _lots_ of other software... and so you need to install all of that other
 software, too!)
 
-### Finding and specifying versions
+### Digression: where does the software get installed!?
+
+Installed software on most operating systems (including Linux, which is what farm runs) is usually installed in a separate place from where you run it.
+
+You _run_ software _in_ a directory where you want to input or output files, e.g. your data files or results files. This directory is known as the current working directory, and it's displayed on the prompt. You can also ask what it is with `pwd`.
+
+You _install_ software into a location (directory) that's on your "path". There are lots of different things there on your path - you can look with:
+```
+echo $PATH
+```
+Some of these locations are system installation locations, some of them are module locations, and some of them are conda locations. It gets pretty complicated!
+
+What `conda activate` is actually _doing_ is adjusting your path to point at the software installed in a particular environment. For example, fastqc is installed in a directory `~/.conda/envs/csv/bin/`; you can figure this out by typing:
+```
+which fastqc
+```
+
+These installation directories can get pretty big:
+```
+du -sh ~/.conda/envs/csv
+```
+will show you this:
+>529M    /home/datalab-05/.conda/envs/csv
+
+but it's still smaller than most of your data sets so :shrug: 
+
+### Back to running things: finding and specifying versions of software
 
 To see what version of a particular piece of software you have installed, run:
 ```
@@ -323,12 +350,12 @@ mamba list csvtk
 ```
 and look at the second column. (Note that `mamba list` doesn't need an exact match, so e.g. you can find all packages with 'csv' in the name by doing `mamba list csv`).
 
-As of Aug 2021, conda installs csvtk version 0.25.0. You can force conda to install _exactly_ this version in the future like so,
+As of Jan 2024, conda installs csvtk version 0.29.0. You can force conda to install _exactly_ this version in the future like so,
 ```
-mamba install csvtk==0.25.0
+mamba install csvtk==0.29.0
 ```
 
-This is really important - software versions change all the time, which may change data analysis results. Mamba lets you "pin" your software to a specific version to help control this!
+This can be really important - software versions change all the time, which may change data analysis results. Mamba lets you "pin" your software to a specific version to help control this!
 
 :::info
 Unfortunately there's no good way to know if a new version of a
@@ -352,7 +379,7 @@ environment and verify that you can run 'sourmash'.
 Try:
 ```
 mamba create --name smash -y sourmash
-conda activate sourmash
+mamba activate sourmash
 sourmash
 ```
 ::::
@@ -399,6 +426,18 @@ mamba env create -n csv2 -f export.yml
 ```
 This would create a new environment called `csv2` that has all the same things installed in it as `csv` does (because that's where we ran `mamba env export`!)
 
+I should say that I don't actually recommend this, because the environment file is going to contain all of the dependencies too. I tend to  just list the specific packages I care about running in the environment file; mamba will happily install all the dependencies as needed.
+
+So, for example, an environment file for csvtk would be simply:
+```yaml!
+channels:
+    - conda-forge
+    - bioconda
+    - defaults
+dependencies:
+    - csvtk
+```
+
 ### Updating, removing, etc software
 
 You can update software with `mamba update`, and remove software with
@@ -442,22 +481,7 @@ Note that switching environments **doesn't switch your working directory**, it j
 
 So, for example, you can have one working directory in which you use two different collections of software just fine; you would just have to switch mamba environments. This is really useful for workflows!
 
-:::warning
-### Tech interlude: what is conda doing?
 
-What conda does when it switches environments is change the location
-where it searches for software -- the PATH (and other environment
-variables) -- so that the software packages are searched for in
-different places.
-
-Try changing environments and each time doing `echo $PATH`. You should
-see that the first element in the PATH changes each time you switch
-environments!
-
-(You can also use `type <program>` or `which <program>` to see where a
-program is located, and which program you are running when you type
-`<program>`.
-:::
 
 ### Challenges with using one big environment
 
@@ -619,13 +643,13 @@ Python is heavily used in data science as well, and it is also well supported
 by conda. Conveniently, you can install different versions quite easily:
 
 ```
-mamba create -n py39 -y python==3.9
+mamba create -n py311 -y python==3.11
 ```
 will install Python v3.9.
 
 Then
 ```
-conda activate py39
+conda activate py311
 type python
 python -V
 ```
@@ -701,9 +725,66 @@ See [the conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/t
 * Disk, vs environment, vs login shell
   * especially note that multiple terminals all look at the same disk
 
+
+## Digression if time: `pixi`
+
+I don't yet use this myself, but I thought it would be fun to try coming at this from a different direction --
+
+Let's use a completely different interface that's built on top of conda, called [pixi](https://github.com/prefix-dev/pixi)! It uses all the same software packages and so on, but uses a different strategy for activating environments.
+
+
+### Install pixi in your account
+
+first, we need to install pixi:
+```
+curl -fsSL https://pixi.sh/install.sh | bash
+```
+
+and activate it:
+```
+source ~/.bashrc
+```
+
+### Initiate a new project in a new directory
+
+```
+cd ~/
+mkdir 298-pixi
+cd 298-pixi
+pixi init .
+```
+
+### Configure it to look at bioconda for packages
+
+```
+pixi project channel add bioconda
+```
+
+### Install `fastqc`
+
+```
+pixi add fastqc
+```
+
+### Run fastqc!
+
+```
+pixi run fastqc ~ctbrown/data/ggg201b/SRR2584857_1.fastq.gz -o .
+```
+
+### Thoughts
+
+What's different about pixi?
+
+Are these differences good or bad?
+
+### pixi & mamba
+
+It seems like you can use them both at the same time :shrug: :exploding_head: 
+
 ## In summary
 
-Mamba and conda is one way you can install software on computers, including most
+Mamba/conda is one way you can install software on computers, including most
 especially HPC and cloud computers.
 
 Mamba lets you create separate "environments" containing collections of
