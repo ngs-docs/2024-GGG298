@@ -39,7 +39,11 @@ Sign in via GitHub and follow through.
 
 Click on "New note."
 
-### A quick tour of the HacMD interface
+### A quick tour of the HackMD interface
+
+Top bar!
+
+Edit mode, split screen mode, view mode.
 
 ### Writing some Markdown
 
@@ -99,7 +103,8 @@ Put hidden text in here.
 * add the below checklist to your document and do the tasks!
 
 - [ ] bold and italicize some words
-- [ ] 
+
+@@
 
 ### Sharing HackMD documents
 
@@ -111,6 +116,8 @@ Sharing in live edit mode:
     * unpublished hackmd documents are private until you give someone the URL, or post the URL
     * I'm an advocate for not worrying too much about just making things world editable :)
     * I haven't figured out exactly how hackmd's user/group sharing works :shrug: 
+* **YES YOU CAN COLLABORATIVELY EDIT**
+    * (example on a new hackmd document)
 * title your documents appropriately
 * use YAML tags
 
@@ -123,9 +130,19 @@ tags: foo, bar, baz
 ```
 
 Sharing in Web site mode:
-* Under 'Share', the first option at the top will share your document but NOT in edit mode. You have to click "Publish" to make it public, & for everyone.
+* Under 'Share', the first option at the top will share your document but NOT in edit mode. You have to click "Publish" to make it public, & it will then be public for everyone.
+* The document will no longer be live updated when you edit it.
 
-Collaborative editing, and why not to use the commenting feature
+Compare:
+
+* [the live view of this page in edit mode](https://hackmd.io/-xtUiHdkRFmvUUCFeBOZ5A?view)
+* [the published page](https://hackmd.io/@ctb/S13zhRD9T)
+
+Note: I don't like the commenting feature that hackmd provides, and I don't recommend using it.
+
+## Discussion time: how do you see yourself using this?
+
+@@
 
 ## Editing Markdown files on GitHub
 
@@ -135,4 +152,65 @@ Then click on Edit. Look ma, Markdown!
 
 Type or paste in some Markdown (yes, straight from hackmd will work).
 
-## Appendix: saving HackMD to GitHub
+Note: preview mode.
+
+Saving uses a staged "version control" model - edit, commit, edit again. More on this in 2-3 weeks ;).
+
+## Using GitHub Issues
+
+You can also use the issue tracker to write Markdown!
+
+Example of new issue;
+pasting in Markdown.
+
+Nopte: you can interlink between issues, even between different repositories!
+
+## Using Markdown in Slack
+
+Slack _also_ supports Markdown formatting!
+
+You can experiment with it by chatting with yourself :)
+
+I find this most useful for simple stuff (italics/bold) as well as triple backquotes for pasting commands.
+
+## Linking HackMD to GitHub
+
+You can link hackmd notes directly to a GitHub repository. You only get a limited number of "push"es tho, unless you pay $$.
+
+This is how I store all my teaching notes.
+
+Note badges!
+
+Advantages:
+* can share the hackmd link (with live updating/editing/corrections) but also have it stored in a more structured way
+* version control is good!
+
+Disadvantages:
+* $$
+* requires manual syncing, which I sometimes forget to do
+
+(Titus demo of doing this on a new HackMD document.)
+
+## Titus's four main uses for hackmd
+
+1. Quick notes/results to share with others.
+
+This is particularly useful for computational commands, especially if they may end up in a GitHub issue or Markdown document.
+
+I will often copy/paste from command line into HackMD and vice versa. Editing command lines in HackMD is actually kinda nice :laughing: 
+
+2. Collaborative note taking.
+
+I split evenly between HackMD and Google Docs for note taking.
+
+Google Docs suggest/comment mode is nicer! But Markdown is nicer than Word!
+
+3. First few drafts of tutorials and documentation.
+
+I really like the ability to quickly rough things out in a Web page-based editor.
+
+I will often provide a link to the hackmd version of something when working on stuff on GitHub, because it's just a much nicer editor and it lets other people view, comment, and edit. [Example](https://github.com/sourmash-bio/sourmash/issues/2812)
+
+4. Teaching.
+
+Live views/edits are golden!
