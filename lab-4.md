@@ -23,7 +23,7 @@ Today you will:
 * see how to "dump" Markdown into GitHub issues;
 * learn about linking between GitHub issues;
 * see how you can use Markdown tricks in Slack, too.
-* think about how you can use HackMD for lab notebooks, sharing results, and writing tutorials and documentation;
+* think about how you can use HackMD yourself.
 
 ## Introduction to Markdown
 
@@ -49,17 +49,17 @@ Edit mode, split screen mode, view mode.
 
 * basic markup - *italic*, **bold**
 * numbered lists & bullet points
-* `verbatim` words and sections
-* quotes with >
+* `verbatim` words and sections (triple backquotes)
+* quotes with > at the beginning of the line
 * checklists with `- [ ]`
-* headings
-* links to other pages
-* links to headings
-* tables
+* headings with #, ##, and so on
+* links to other pages with ``[link text](link URL)``
+* links to headings - I'll show you how
+* tables - use the hackmd tool bar here!
 * section breaks with `---`
 * HackMD specific features:
     * using `[toc]`
-    * `::::` blocks
+    * `:::` blocks
     * emojis!
     * drag/drop images
     * titles, tags, and document metadata
@@ -98,15 +98,29 @@ Put hidden text in here.
 
 ## Live practice
 
-* Create a new HackMD document
-* Find or write some text (e.g. take an excerpt from Wikipedia)
-* add the below checklist to your document and do the tasks!
+1. Create a new HackMD document
+2. Find or write some text (e.g. take an excerpt from Wikipedia)
+3. add the below checklist to your document and then add examples of each item - check each off after you're done!
 
 - [ ] bold and italicize some words
-
-@@
+- [ ] add a numbered list & a bullet point list
+- [ ] use both `verbatim` words and sections
+- [ ] add a quote with > at the beginning of the sentennce
+- [ ] add two different headings headings
+- [ ] add a link to another page
+- [ ] add a link to an internal heading
+- [ ] add a small tables
+- [ ] add a section break with `---`
+- [ ] add a table of contents with `[toc]`
+- [ ] add a `:::` block
+- [ ] use `:` to create an emoji!
+- [ ] drag/drop an image or chart in from your computer
+- [ ] add a tag at the beginning of the document
+- [ ] add a title and update the document metadata
 
 ### Sharing HackMD documents
+
+EDITME
 
 Sharing in live edit mode:
 
@@ -116,7 +130,7 @@ Sharing in live edit mode:
     * unpublished hackmd documents are private until you give someone the URL, or post the URL
     * I'm an advocate for not worrying too much about just making things world editable :)
     * I haven't figured out exactly how hackmd's user/group sharing works :shrug: 
-* **YES YOU CAN COLLABORATIVELY EDIT**
+* **YES YOU CAN COLLABORATIVELY EDIT** - [TRY HERE](https://hackmd.io/S8oW5SNET463A6gMTJKesA)
     * (example on a new hackmd document)
 * title your documents appropriately
 * use YAML tags
@@ -140,13 +154,23 @@ Compare:
 
 Note: I don't like the commenting feature that hackmd provides, and I don't recommend using it.
 
-## Discussion time: how do you see yourself using this?
+## Discussion time: how do you see yourself using this (if at all)?
 
-@@
+[Do you have thoughts about where hackmd fits in your research toolkit?](https://docs.google.com/forms/d/e/1FAIpQLSfTVppbt__OynnwQxHNOtsaaEsjTLG2h-5sUYLt-3Kj4kNk3g/viewform)
+
+Alternative tools and approaches:
+* RMarkdown (but not good collab)
+* Google Docs
+* Notion
+* Obsidian (HackMD-like collections of Markdown, but self-hosted)
+* Benchling (find me)
+* ...?
 
 ## Editing Markdown files on GitHub
 
-Go to GitHub and create a repository with a default README.md file.
+Go to GitHub and create a repository with a default README.md file. (You can use [this link, github.com/new](https://github.com/new), to get started.)
+
+Titus's repo is: https://github.com/ctb/2024-ggg298-example-repo-fascinating-stuff-in-here
 
 Then click on Edit. Look ma, Markdown!
 
@@ -177,7 +201,7 @@ I find this most useful for simple stuff (italics/bold) as well as triple backqu
 
 You can link hackmd notes directly to a GitHub repository. You only get a limited number of "push"es tho, unless you pay $$.
 
-This is how I store all my teaching notes.
+This is how I store all my teaching notes. See https://github.com/ngs-docs/2024-GGG298 for example!
 
 Note badges!
 
