@@ -2,6 +2,9 @@
 tags: ggg, ggg2024, ggg298
 ---
 
+[![hackmd-github-sync-badge](https://hackmd.io/-xtUiHdkRFmvUUCFeBOZ5A/badge)](https://hackmd.io/-xtUiHdkRFmvUUCFeBOZ5A)
+
+
 [toc] 
 
 # Markdown, HackMD, and GitHub for note taking - Lab 4, Week 4 - GGG 298 WQ 2024
