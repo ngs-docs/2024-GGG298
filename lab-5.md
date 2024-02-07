@@ -2,6 +2,9 @@
 tags: ggg, ggg2024, ggg298
 ---
 
+[![hackmd-github-sync-badge](https://hackmd.io/TENCqj_ASpuIvMArTuGrPw/badge)](https://hackmd.io/TENCqj_ASpuIvMArTuGrPw)
+
+
 [toc]
 
 # Lab miniproject on sourmash, first cut - GGG 298 WQ 2024 - Lab 5, Week 5
@@ -10,7 +13,7 @@ tags: ggg, ggg2024, ggg298
 
 Work in groups (encouraged) or individually to:
 
-1. Run the sourmash commands below to produce one or more comparison plots of 3 genomes.
+1. Run the sourmash commands below to produce one or more comparison plots of 3 genomes. (I suggest using farm to do this, but you can do it on your own computer if you want, too.)
 2. Document and explain how to do this from start to finish in a HackMD tutorial; test the HackMD starting from scratch. (This document can start from _after_ you log into farm.)
 3. Individually or collectively explore ways to zhuzh up the tutorial or the output.
 
@@ -35,6 +38,12 @@ sourmash plot sulfo.cmp
 ```
 
 This will produce a file `sulfo.cmp.matrix.png`.
+
+### Links
+
+[Hackmd, Markdown, and GitHub](https://hackmd.io/-xtUiHdkRFmvUUCFeBOZ5A?view)
+
+[Installing software with mamba](https://hackmd.io/BffW5KHxTCKPyhUAo2tqHg?view)
 
 ## Additional & optional mission: try starting an RStudio Server via the Open On Demand Web interface.
 
