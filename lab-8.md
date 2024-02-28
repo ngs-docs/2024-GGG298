@@ -2,6 +2,9 @@
 tags: ggg, ggg2024, ggg298
 ---
 
+[![hackmd-github-sync-badge](https://hackmd.io/CRKtp-TvSHmsWn7RYUACQQ/badge)](https://hackmd.io/CRKtp-TvSHmsWn7RYUACQQ)
+
+
 [toc]
 
 # snakemake and git/GitHub - Lab 8 - GGG 298 WQ 2024
