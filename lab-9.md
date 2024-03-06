@@ -4,6 +4,9 @@ tags: ggg2024, ggg298, ggg
 
 # Quarto & Literate Programming; Slurm and HPC - Week 9, GGG 298 WQ 2024.
 
+[![hackmd-github-sync-badge](https://hackmd.io/dfxIdhpTSd6Gfb3pj1p8dQ/badge)](https://hackmd.io/dfxIdhpTSd6Gfb3pj1p8dQ)
+
+
 Announcements -
 
 * Week 10 (next week!) will be an open practice class, with both more and less-guided options. Please come in person if you can!
@@ -21,16 +24,16 @@ mamba create -n run_quarto -y quarto r-base r-rmarkdown openssh
 
 ### Start up RStudio, but differently.
 
-Per [instructions](https://hackmd.io/KuZZCPzJQZCjytSnVSnJew?view#Log-into-farm-via-ssh), but **instead of doing**:
+Per [instructions](https://hackmd.io/KuZZCPzJQZCjytSnVSnJew?view#Log-into-farm-via-ssh), but <span style="color:red">**instead of doing**</span>:
 
 ```
-module load R
-module load rstudio-server
-rstudio-launch
+XX module load R
+XX module load rstudio-server
+XX rstudio-launch
 ```
 as [those instructions suggest](https://hackmd.io/KuZZCPzJQZCjytSnVSnJew?view#Run-RStudio-Server-on-your-reserved-node),
 
-run:
+<span style="color:green">**run this instead**</span>:
 ```
 module load mamba
 mamba activate run_quarto
@@ -66,6 +69,7 @@ mamba activate run_quarto
 
 and then:
 ```
+cd ~/
 git clone git@github.com:YOUR_USERNAME/2024-ggg-298-quarto/
 ```
 
@@ -108,18 +112,54 @@ legend("topright", legend = "Fitted Curve", col = "red", lty = 1, lwd = 2)
 
 ~~~
 
-### Render
+### Render via RStudio
 
-Click "Render" in RStudio. What do you see?
+Click "Render" in RStudio (in the editor). What do you see? How does it differ from what's in the .qmd file?
+
+### Render via command line
+
+You can also render this via the command line -
+```
+cd ~/2024-ggg-298-quarto
+quarto render
+```
+what does this produce?
 
 ### Publish to github pages
 
-@@ what is github pages
+Wouldn't it be nice to make this available to others?? :)
 
-what is github pages
-only on public repos, I think
+There are many places to host static Web sites, but [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) is a particularly nice one and it's free.
 
-## Python?
+To publish this to github pages, run:
+
+```
+quarto publish gh-pages
+```
+
+and it will tell you where it's posting it!
+
+Note, I think that GitHub pages only works on public repositories, but there are [many other places where you can host the published Web sites privately](https://quarto.org/docs/publishing/).
+
+### Digression - why do this??
+
+Quarto is one example of "literate programming", which is a very nice combination of showing results along with the computational approaches.
+
+the key points here are:
+* the results you see are always exactly produced by the commands that are also in the document;
+* this is a completely transparent report, in that there is nothing hidden about the parameters or statistical approaches used.
+
+See this grant proposal for more exploration of this idea! [Project Jupyter: Computational Narratives as the Engine of Collaborative Data Science](https://blog.jupyter.org/project-jupyter-computational-narratives-as-the-engine-of-collaborative-data-science-2b5fb94c3c58)
+
+### So... can we use Python?
+
+### Closing thoughts around Quarto
+
+Quarto is one example of literate programming for data science - you can also use things like [Jupyter Notebooks](https://jupyter.org/), or [Observable Notebooks](https://observablehq.com/).
+
+Quarto is what I would personally recommend since it's open source, supports multiple languages, and has many output options.
+
+Jupyter and other notebook platforms are really great for working interactively with data but have some drawbacks for both teaching and scientific reproducibility, in my experience.
 
 ## Slurm and HPC
 
