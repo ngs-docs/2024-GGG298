@@ -221,6 +221,7 @@ jupyter:
 ```
 
 and that would use the `py310` kernel (in its own conda environment).
+
 :::
 
 Instead of doing that, let's just install Python + necessary commands in this environment:
